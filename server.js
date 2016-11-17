@@ -5,13 +5,13 @@ var app = express();
 // Busca a porta do Heroku
 const PORT = process.env.PORT || 3000;
 
-// app.use(function(req, res, next){
-//   if (req.headers['x-forwarded-prop'] ==='http') {
-//     next();
-//   } else {
-//     res.redirect('http://' + req.hostname + req.url);
-//   }
-// });
+app.use(function(req, res, next){
+  if (req.headers['x-forwarded-prop'] ==='http') {
+    next();
+  } else {
+    res.redirect('http://' + req.hostname + req.url);
+  }
+});
 
 app.use(express.static('public'));
 
