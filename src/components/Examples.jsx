@@ -1,19 +1,19 @@
 import React from 'react';
-
-// var Examples = React.createClass({
-//   render(){
-//     return(
-//       <h3>Examples component</h3>
-//     );
-//   }
-// });
-
+import {Link} from 'react-router';
 
 var Examples = (props) => {
   return(
     <div>
-      <h3>Examples</h3>
-      <p>Welcome to the examples page!</p>
+      <h1 className='text-center'>Examples</h1>
+      <p>Here are a few example locations to try out</p>
+      <ol>
+        <li>
+          <Link to='/?location=Sao Paulo'>São Paulo, SP</Link>
+        </li>
+        <li>
+          <Link to='/?location=Austin'>Austin, TX</Link>
+        </li>
+      </ol>
     </div>
   );
 }
