@@ -16,7 +16,7 @@ export default {
           return res.data.main.temp;
         }
       }, (res) =>{
-        throw new Error(res.data.message);
+        throw new Error(res.response.data.message);
       });
   }
 };;
